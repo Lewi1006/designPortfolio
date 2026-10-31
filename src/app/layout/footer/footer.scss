@@ -1,10 +1,5 @@
 @use '../../../../public/styles/main' as *;
 
-p {
-  font-family: 'Departure Mono';
-  font-size: 28px;
-}
-
 footer {
   height: $height-footer;
   width: 100%;
@@ -17,9 +12,15 @@ footer {
 
   @include d-flex(row, center, space-between);
 
-
-  .footer-side{
+  .footer-side {
     width: fit-content;
-     @include d-flex(row, center, center, 40px);
+    @include d-flex(row, center, center, 40px);
+
+    a {
+      font-family: 'Departure Mono';
+      font-size: 28px;
+
+      cursor: pointer;
+    }
   }
 }

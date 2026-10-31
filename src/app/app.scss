@@ -1,0 +1,6 @@
+@use '../../public/styles/main' as *;
+
+main {
+  height: calc(100dvh - $height-footer);
+  background-color: blue;
+}

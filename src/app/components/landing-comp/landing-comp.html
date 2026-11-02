@@ -1,0 +1,3 @@
+@for (trinketItem of trinketService.trinkets(); track trinketItem.id){
+    <app-trinket-comp [trinket]="trinketItem"/>
+}

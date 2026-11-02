@@ -1,0 +1,10 @@
+@use '../../../../public/styles/main' as *;
+
+img {
+  max-width: 150px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}

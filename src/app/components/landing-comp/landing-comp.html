@@ -1,3 +1,9 @@
-@for (trinketItem of trinketService.trinkets(); track trinketItem.id){
-    <app-trinket-comp [trinket]="trinketItem"/>
-}
+<section class="landing">
+  <div class="content">
+    <div class="trinket-area">
+      @for (trinketItem of trinketService.trinkets(); track trinketItem.id) {
+        <app-trinket-comp [trinket]="trinketItem" />
+      }
+    </div>
+  </div>
+</section>

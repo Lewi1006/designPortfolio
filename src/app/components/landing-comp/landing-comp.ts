@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ElementRef, viewChild, AfterViewInit } from '@angular/core';
 import { TrinketService } from '../../shared/services/trinket.service';
 import { TrinketComp } from '../trinket-comp/trinket-comp';
 
@@ -8,6 +8,25 @@ import { TrinketComp } from '../trinket-comp/trinket-comp';
   styleUrl: './landing-comp.scss',
   templateUrl: './landing-comp.html',
 })
-export class LandingComp {
+export class LandingComp implements AfterViewInit {
   trinketService = inject(TrinketService);
+
+  trinketArea = viewChild<ElementRef<HTMLDivElement>>('trinketArea');
+  trinketAreaWidth = 0;
+  trinketAreaHeight = 0;
+
+  ngAfterViewInit(){
+    this.showDimensions();
+  }
+
+  showDimensions() {
+    const trinketArea = this.trinketArea()?.nativeElement;
+
+    if (!trinketArea) return;
+
+    this.trinketAreaWidth = trinketArea.clientWidth;
+    this.trinketAreaHeight = trinketArea.clientHeight;
+
+    console.log(this.trinketAreaWidth, this.trinketAreaHeight);
+  }
 }

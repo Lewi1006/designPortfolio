@@ -2,20 +2,16 @@ import { Injectable, signal } from '@angular/core';
 import { Trinket } from '../interfaces/trinket.interface';
 import { TRINKETSDB } from '../../data/trinkets.db';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class TrinketService {
- 
-    trinkets = signal<Trinket[]>(TRINKETSDB);
+  trinkets = signal<Trinket[]>(TRINKETSDB);
 
-    // gets values passed into from landing comp, which meassures the trinketArea
-    setRandomPositions(width: number, height: number){
-
-    }
-
-
-
+  // gets dimension values passed into from landing comp,
+  // which meassures the trinketArea
+  setRandomPositions(width: number, height: number) {
+    console.log('Width:', width);
+    console.log('Height:', height);
+  }
 }

@@ -37,8 +37,9 @@ export class LandingComp implements AfterViewInit {
   }
 
 
-  onImageLoaded(event: {id:number; width: number; height:number}){
-    console.log(event);
+  onImageLoaded(imageDimensions: {id:number; width: number; height:number}){
+    console.log("Dimensions:", imageDimensions);
 
+    this.trinketService.setImageDimensions(imageDimensions);
   }
 }

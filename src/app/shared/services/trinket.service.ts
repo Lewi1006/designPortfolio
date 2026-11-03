@@ -14,4 +14,8 @@ export class TrinketService {
     console.log('Width:', width);
     console.log('Height:', height);
   }
+
+  setImageDimensions(imageDimensions: {id: number; width: number; height: number}){
+    console.log('Received in service:', imageDimensions);
+  }
 }

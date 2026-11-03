@@ -27,6 +27,7 @@ export class TrinketComp {
     console.log(imageWidth, imageHeight);
 
     // send the values as output signal to parent comp (landing) so that it can pass the img dimensions to the trinket service
+    // data object is emitted as $event here
     this.imageLoaded.emit({ id: this.trinket()!.id, width: imageWidth, height: imageHeight });
   }
 }

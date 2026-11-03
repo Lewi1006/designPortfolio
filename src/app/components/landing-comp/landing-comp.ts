@@ -17,6 +17,12 @@ export class LandingComp implements AfterViewInit {
 
   ngAfterViewInit(){
     this.showDimensions();
+
+    // passes the dimensions to the service so trinkets can get random positions
+    this.trinketService.setRandomPositions(
+      this.trinketAreaWidth,
+      this.trinketAreaHeight
+    )
   }
 
   showDimensions() {

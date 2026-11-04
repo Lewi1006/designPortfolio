@@ -35,12 +35,29 @@ export class LandingComp implements AfterViewInit {
 
     console.log(this.trinketAreaWidth, this.trinketAreaHeight);
     // passes the dimensions to the service so trinkets can get random positions
-    this.trinketService.setRandomPositions(this.trinketAreaWidth, this.trinketAreaHeight, this.trinketAreaLeft, this.trinketAreaTop);
+    this.trinketService.setRandomPositions(
+      this.trinketAreaWidth,
+      this.trinketAreaHeight,
+      this.trinketAreaLeft,
+      this.trinketAreaTop,
+    );
   }
 
   onImageLoaded(imageDimensions: { id: number; width: number; height: number }) {
     console.log('Dimensions:', imageDimensions);
 
     this.trinketService.setImageDimensions(imageDimensions);
+  }
+
+  onPointerStarted(pointerLocation: { id: number; offsetX: number; offsetY: number }) {
+    this.trinketService.setDragOffset(pointerLocation.offsetX, pointerLocation.offsetY);
+  }
+
+  onPointerMoved(pointerLocation: { id: number; clientX: number; clientY: number }) {
+    this.trinketService.dragTrinket(
+      pointerLocation.id,
+      pointerLocation.clientX,
+      pointerLocation.clientY,
+    );
   }
 }

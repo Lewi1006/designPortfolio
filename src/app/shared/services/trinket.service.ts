@@ -15,6 +15,9 @@ export class TrinketService {
   trinketAreaLeft = 0;
   trinketAreaTop = 0;
 
+  dragOffsetX = 0;
+  dragOffsetY = 0;
+
   // gets dimension values passed into from landing comp,
   // which meassures the trinketArea
   setRandomPositions(width: number, height: number, left: number, top: number) {
@@ -71,5 +74,39 @@ export class TrinketService {
 
     // 4. Update the signal with the new array
     this.trinkets.set(updatedTrinkets);
+  }
+
+  setDragOffset(offsetX: number, offsetY: number) {
+    this.dragOffsetX = offsetX;
+    this.dragOffsetY = offsetY;
+  }
+
+  dragTrinket(id: number, clientX: number, clientY: number) {
+    // find the dimensions of the trinket image
+    const dimensions = this.imageDimensions().find((image) => image.id === id);
+
+    // calculate new x and y coordinates
+    const newX = clientX - this.trinketAreaLeft - this.dragOffsetX;
+    const newY = clientY - this.trinketAreaTop - this.dragOffsetY;
+
+    // trinketarea bounds --> making sure trinket stays in container
+    const maxX = this.trinketAreaWidth - dimensions!.width;
+    const maxY = this.trinketAreaHeight - dimensions!.height;
+
+    // clamp coordinates so the cannot extend the trinketarea --> maxX and max>
+    // making sure newX and newY never go below 0 or above maxX / maxY.
+    const x = Math.min(Math.max(0, newX), maxX);
+    const y = Math.min(Math.max(0, newY), maxY);
+
+    // 1. .update() updates the signal using its current array.
+    // 2. .map() goes through every trinket.
+    // 3. trinket.id === id checks whether this is the trinket we're dragging.
+    // 4. If it matches, we create a copy with the new x and y.
+    // 5. If it doesn't match, we return the original trinket unchanged.
+    // This way, we only update the position of the trinket being dragged.
+
+    this.trinkets.update((existingTrinkets) =>
+      existingTrinkets.map((trinket) => (trinket.id === id ? { ...trinket, x: x, y: y } : trinket)),
+    );
   }
 }

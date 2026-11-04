@@ -7,7 +7,12 @@
   <div class="content">
     <div class="trinket-area" #trinketArea>
       @for (trinketItem of trinketService.trinkets(); track trinketItem.id) {
-        <app-trinket-comp [trinket]="trinketItem" (imageLoaded)="onImageLoaded($event)"/>
+        <app-trinket-comp
+          [trinket]="trinketItem"
+          (imageLoaded)="onImageLoaded($event)"
+          (pointerStarted)="onPointerStarted( $event)"
+          (pointerMoved)="onPointerMoved($event)"
+        />
       }
     </div>
   </div>

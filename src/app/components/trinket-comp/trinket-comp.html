@@ -1,3 +1,10 @@
 <div class="trinket" [style.left.px]="trinket()?.x" [style.top.px]="trinket()?.y">
-  <img [src]="trinket()?.image" [alt]="trinket()?.id" (load)="onImageLoad($event)" />
+  <img
+    [src]="trinket()?.image"
+    [alt]="trinket()?.id"
+    (load)="onImageLoad($event)"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp($event)"
+  />
 </div>

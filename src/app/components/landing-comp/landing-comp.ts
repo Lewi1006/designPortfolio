@@ -51,6 +51,7 @@ export class LandingComp implements AfterViewInit {
 
   onPointerStarted(pointerLocation: { id: number; offsetX: number; offsetY: number }) {
     this.trinketService.setDragOffset(pointerLocation.offsetX, pointerLocation.offsetY);
+    this.trinketService.bringToFront(pointerLocation.id);
   }
 
   onPointerMoved(pointerLocation: { id: number; clientX: number; clientY: number }) {

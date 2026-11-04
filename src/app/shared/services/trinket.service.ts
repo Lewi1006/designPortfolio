@@ -109,4 +109,20 @@ export class TrinketService {
       existingTrinkets.map((trinket) => (trinket.id === id ? { ...trinket, x: x, y: y } : trinket)),
     );
   }
+
+  // this.trinkets() gets the array.
+  // .map() creates a new array containing only the zIndex values.
+  // ... spreads those numbers out as individual arguments.
+  // Math.max() returns the highest number.
+
+  bringToFront(id: number) {
+    const highestZIndex = Math.max(...this.trinkets().map((trinket) => trinket.zIndex));
+    const newZIndex = highestZIndex + 1;
+
+    this.trinkets.update((existingTrinkets) =>
+      existingTrinkets.map((trinket) =>
+        trinket.id === id ? { ...trinket, zIndex: newZIndex } : trinket,
+      ),
+    );
+  }
 }

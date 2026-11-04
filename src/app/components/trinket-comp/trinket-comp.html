@@ -1,7 +1,13 @@
-<div class="trinket" [style.left.px]="trinket()?.x" [style.top.px]="trinket()?.y">
+<div
+  class="trinket"
+  [style.left.px]="trinket()?.x"
+  [style.top.px]="trinket()?.y"
+  [style.z-index]="trinket()?.zIndex"
+>
   <img
     [src]="trinket()?.image"
     [alt]="trinket()?.id"
+    draggable="false"
     (load)="onImageLoad($event)"
     (pointerdown)="onPointerDown($event)"
     (pointermove)="onPointerMove($event)"

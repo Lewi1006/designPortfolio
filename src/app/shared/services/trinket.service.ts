@@ -12,12 +12,16 @@ export class TrinketService {
 
   trinketAreaWidth = 0;
   trinketAreaHeight = 0;
+  trinketAreaLeft = 0;
+  trinketAreaTop = 0;
 
   // gets dimension values passed into from landing comp,
   // which meassures the trinketArea
-  setRandomPositions(width: number, height: number) {
+  setRandomPositions(width: number, height: number, left: number, top: number) {
     this.trinketAreaWidth = width;
     this.trinketAreaHeight = height;
+    this.trinketAreaLeft = left;
+    this.trinketAreaTop = top;
   }
 
   // gets dimensions of each trinket

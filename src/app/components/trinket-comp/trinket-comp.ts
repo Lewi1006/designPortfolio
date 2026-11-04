@@ -13,6 +13,19 @@ export class TrinketComp {
   // sends output to parent
   imageLoaded = output<{ id: number; width: number; height: number }>();
 
+  // offsetX and offsetY: where on the image the user grabbed it.
+  pointerStarted = output<{
+    id: number;
+    offsetX: number;
+    offsetY: number;
+  }>();
+  // clientX and clientY: the pointer's position in the viewport.
+  pointerMoved = output<{
+    id: number;
+    clientX: number;
+    clientY: number;
+  }>();
+
   isDragging = false;
 
   // event.target — gets the HTML element that triggered the event.
@@ -47,12 +60,24 @@ export class TrinketComp {
     const image = event.currentTarget as HTMLImageElement;
     image.setPointerCapture(event.pointerId);
 
-    console.log(offsetX, offsetY);
+    this.pointerStarted.emit({
+      id: this.trinket()!.id,
+      offsetX: offsetX,
+      offsetY: offsetY,
+    });
+
+    console.log('Grab position:', offsetX, offsetY);
   }
 
   // coordinates of where the pointer moves
   onPointerMove(event: PointerEvent) {
     if (!this.isDragging) return;
+
+    this.pointerMoved.emit({
+      id: this.trinket()!.id,
+      clientX: event.clientX,
+      clientY: event.clientY,
+    });
 
     console.log(event.clientX, event.clientY);
   }

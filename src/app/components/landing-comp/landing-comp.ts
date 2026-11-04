@@ -14,31 +14,32 @@ export class LandingComp implements AfterViewInit {
   trinketArea = viewChild<ElementRef<HTMLDivElement>>('trinketArea');
   trinketAreaWidth = 0;
   trinketAreaHeight = 0;
+  trinketAreaLeft = 0;
+  trinketAreaTop = 0;
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.showDimensions();
-
   }
-  
+
   showDimensions() {
     const trinketArea = this.trinketArea()?.nativeElement;
-    
+
     if (!trinketArea) return;
-    
+
     this.trinketAreaWidth = trinketArea.clientWidth;
     this.trinketAreaHeight = trinketArea.clientHeight;
-    
+
+    const rect = trinketArea.getBoundingClientRect();
+    this.trinketAreaLeft = rect.left;
+    this.trinketAreaTop = rect.top;
+
     console.log(this.trinketAreaWidth, this.trinketAreaHeight);
     // passes the dimensions to the service so trinkets can get random positions
-    this.trinketService.setRandomPositions(
-      this.trinketAreaWidth,
-      this.trinketAreaHeight
-    )
+    this.trinketService.setRandomPositions(this.trinketAreaWidth, this.trinketAreaHeight, this.trinketAreaLeft, this.trinketAreaTop);
   }
 
-
-  onImageLoaded(imageDimensions: {id:number; width: number; height:number}){
-    console.log("Dimensions:", imageDimensions);
+  onImageLoaded(imageDimensions: { id: number; width: number; height: number }) {
+    console.log('Dimensions:', imageDimensions);
 
     this.trinketService.setImageDimensions(imageDimensions);
   }

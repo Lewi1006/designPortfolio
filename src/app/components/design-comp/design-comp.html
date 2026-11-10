@@ -1,1 +1,13 @@
-<p>design-comp works!</p>
+<section class="design">
+  <div class="content">
+    <div class="project-list">
+      @for (project of designListService.projects(); track project.id) {
+        <div class="project-row">
+          <span class="project-number">{{ project.id | twoDigit }}</span>
+          <span class="project-title">{{ project.title }}</span>
+          <span class="project-medium">{{ project.medium }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

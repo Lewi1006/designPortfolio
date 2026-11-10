@@ -1,0 +1,27 @@
+@use '../../../../public/styles/main' as *;
+
+.design {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+}
+
+.project-list {
+  @include d-flex(column, flex-start, center, 10px);
+
+  .project-row {
+    @include d-flex(row, flex-start, baseline, 24px);
+
+    .project-number {
+      width: 40px;
+    }
+
+    .project-title {
+      width: 300px;
+    }
+
+    .project-medium{
+        font-style: italic;
+    }
+  }
+}

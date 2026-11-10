@@ -21,5 +21,12 @@ export const TRINKETSDB: Trinket[] = [
     x: 0,
     y: 0,
     zIndex: 3,
-  }
+  },
+    {
+    id: 4,
+    image: '/img/thank you bag.png',
+    x: 0,
+    y: 0,
+    zIndex: 4,
+  },
 ];

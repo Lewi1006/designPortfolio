@@ -1,0 +1,50 @@
+@use '../../../../public/styles/main' as *;
+
+.about {
+  height: 100%;
+  width: 100%;
+}
+
+.layout-wrapper {
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+
+  @include d-flex(row, flex-start, space-between);
+
+  .img-container {
+    width: 350px;
+    height: 350px;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .about-bg {
+      width: 350px;
+      height: 350px;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+    .about-me {
+      width: 220px;
+      height: 260px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+  }
+}
+
+.text-container {
+    width: 700px;
+
+  p {
+    color: black;
+    text-align: left;
+  }
+}

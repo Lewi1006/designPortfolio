@@ -1,0 +1,19 @@
+<!-- (imageLoaded)="onImageLoaded($event)" = output event from child(trinket comp) 
+ that gets passed to parent (landing comp) -->
+<!-- [trinket]="trinketItem" = passes the current trinket object from 
+ parent (landing comp) to child (trinket comp) as an input -->
+
+<section class="landing">
+  <div class="content">
+    <div class="trinket-area" #trinketArea>
+      @for (trinketItem of trinketService.trinkets(); track trinketItem.id) {
+        <app-trinket-comp
+          [trinket]="trinketItem"
+          (imageLoaded)="onImageLoaded($event)"
+          (pointerStarted)="onPointerStarted( $event)"
+          (pointerMoved)="onPointerMoved($event)"
+        />
+      }
+    </div>
+  </div>
+</section>

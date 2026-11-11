@@ -6,12 +6,23 @@
           class="project-row"
           [routerLink]="['/design', project.slug]"
           (mouseenter)="onProjectHover(project, $event)"
+          (mousemove)="onProjectHover(project, $event)"
           (mouseleave)="onProjectLeave()"
         >
           <span class="project-number">{{ project.id | twoDigit }}</span>
           <span class="project-title">{{ project.title }}</span>
           <span class="project-medium">{{ project.medium }}</span>
         </a>
+      }
+
+      @if (hoveredProject(); as project) {
+        <img
+          class="project-preview"
+          [src]="project.preview"
+          [alt]="project.title"
+          [style.left.px]="cursorPosition().x"
+          [style.top.px]="cursorPosition().y"
+        />
       }
     </div>
   </div>

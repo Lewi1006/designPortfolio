@@ -6,7 +6,7 @@ export const DESIGNPROJECTSDB: DesignProject[] = [
     title: 'Spielraum',
     medium: 'book design',
     slug: 'spielraum',
-    preview: '/img/spielraum01.png',
+    preview: '/img/spielraum01.jpg',
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const DESIGNPROJECTSDB: DesignProject[] = [
     title: 'Playground',
     medium: 'print',
     slug: 'playground',
-    preview: '/img/playground01.jpg',
+    preview: '/img/playground01.png',
   },
   {
     id: 4,

@@ -2,7 +2,7 @@
       @for (project of projects(); track project.id) {
         <a
           class="project-row"
-          [routerLink]="['/design', project.slug]"
+          [routerLink]="['/', baseRoute(), project.slug]"
           (mouseenter)="onProjectHover(project, $event)"
           (mousemove)="onProjectHover(project, $event)"
           (mouseleave)="onProjectLeave()"

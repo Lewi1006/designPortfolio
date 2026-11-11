@@ -13,6 +13,8 @@ export class ProjectListComp {
 
   projects = input<Project[]>([]);
 
+    baseRoute = input<string>();
+
 
   // stores the project currently being hovered over
   hoveredProject = signal<Project | null>(null);

@@ -1,4 +1,4 @@
-import { DesignProject } from '../shared/interfaces/design-project.interface';
+import { DesignProject } from '../shared/interfaces/project.interface';
 
 export const DESIGNPROJECTSDB: DesignProject[] = [
   {

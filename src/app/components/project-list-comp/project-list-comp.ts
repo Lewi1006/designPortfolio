@@ -1,7 +1,7 @@
 import { Component, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TwoDigitPipe } from '../../shared/pipes/two-digit-pipe';
-import { DesignProject } from '../../shared/interfaces/design-project.interface';
+import { DesignProject } from '../../shared/interfaces/project.interface';
 
 @Component({
   imports: [RouterLink, TwoDigitPipe],

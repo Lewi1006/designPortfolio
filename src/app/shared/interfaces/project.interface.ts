@@ -1,4 +1,4 @@
-export interface DesignProject {
+export interface Project {
   id: number;
   title: string;
   medium: string;

@@ -1,6 +1,6 @@
-import { DesignProject } from '../shared/interfaces/project.interface';
+import { Project } from '../shared/interfaces/project.interface';
 
-export const FRONTENDPROJECTSDB: DesignProject[] = [
+export const FRONTENDPROJECTSDB: Project[] = [
   {
     id: 1,
     title: 'Frontend Portfolio',

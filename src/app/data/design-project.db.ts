@@ -1,6 +1,6 @@
-import { DesignProject } from '../shared/interfaces/project.interface';
+import { Project } from '../shared/interfaces/project.interface';
 
-export const DESIGNPROJECTSDB: DesignProject[] = [
+export const DESIGNPROJECTSDB: Project[] = [
   {
     id: 1,
     title: 'Spielraum',

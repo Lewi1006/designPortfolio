@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { DesignListService } from '../../shared/services/design-list.service';
 import { ProjectListComp } from '../project-list-comp/project-list-comp';
 

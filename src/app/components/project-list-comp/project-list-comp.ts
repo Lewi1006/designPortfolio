@@ -10,11 +10,9 @@ import { Project } from '../../shared/interfaces/project.interface';
   templateUrl: './project-list-comp.html',
 })
 export class ProjectListComp {
-
   projects = input<Project[]>([]);
 
-    baseRoute = input<string>();
-
+  baseRoute = input<string>();
 
   // stores the project currently being hovered over
   hoveredProject = signal<Project | null>(null);
@@ -30,5 +28,4 @@ export class ProjectListComp {
   onProjectLeave() {
     this.hoveredProject.set(null);
   }
-
 }

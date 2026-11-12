@@ -1,7 +1,28 @@
 <section class="project-details">
   <div class="content">
     @if (project(); as currentProject) {
-      <h1>{{ currentProject.title }}</h1>
+      <div class="project-info">
+        <h1>{{ currentProject.title }}</h1>
+
+        <div class="collaborators">
+          @for (collaborator of currentProject.collaborators; track collaborator) {
+            <p>{{ collaborator }}</p>
+          }
+        </div>
+
+        <div class="specifications">
+          @for (specification of currentProject.specifications; track specification.label) {
+            <div class="specification">
+              <h2>{{ specification.label }}</h2>
+              <p>{{ specification.value }}</p>
+            </div>
+          }
+        </div>
+
+        <div class="description">
+          <p>{{ currentProject.description }}</p>
+        </div>
+      </div>
     }
   </div>
 </section>

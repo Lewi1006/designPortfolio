@@ -5,10 +5,10 @@ export interface Project {
   slug: string;
   preview: string;
 
-  collaborators: string[];
-  specifications: {
+  collaborators?: string[];
+  specifications?: {
     label: string;
     value: string;
   }[];
-  description: string;
+  description?: string;
 }

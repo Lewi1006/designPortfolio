@@ -1,3 +1,26 @@
-h1{
-    color: black;
+@use '../../../../public/styles/main' as *;
+
+.project-details{
+    height: 100%;
+    width: 100%;  
+    padding-top: 24px; 
+}
+
+.project-info{
+    @include d-flex(row, flex-start, flex-start, 20px);
+    width: 100%;
+
+    .project-facts{
+        width: 20%;
+        height: 200px;
+        @include d-flex(column, flex-start, space-between);
+
+        h1{
+            font-size: 24px;;
+        }
+    }
+
+    .description{
+        width: 80%;
+    }
 }

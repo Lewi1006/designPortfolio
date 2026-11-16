@@ -1,26 +1,64 @@
 @use '../../../../public/styles/main' as *;
 
-.project-details{
-    height: 100%;
-    width: 100%;  
-    padding-top: 24px; 
+.project-details {
+  height: 100%;
+  width: 100%;
+  padding-top: 24px;
 }
 
-.project-info{
+.project-wrapper {
+  @include d-flex(column, flex-start, flex-start, 100px);
+  width: 100%;
+
+  .project-info {
     @include d-flex(row, flex-start, flex-start, 20px);
     width: 100%;
 
-    .project-facts{
-        width: 20%;
-        height: 200px;
-        @include d-flex(column, flex-start, space-between);
+    .project-facts {
+      width: 20%;
+      height: 250px;
+      max-height: 300px;
+      @include d-flex(column, flex-start, space-between);
 
-        h1{
-            font-size: 24px;;
+      h1 {
+        font-size: 24px;
+        font-family: 'Departure Mono';
+        font-weight: 400;
+      }
+
+      .specifications {
+        @include d-flex(column, flex-start, flex-start, 6px);
+
+        h2 {
+          font-weight: 400;
+          font-style: italic;
         }
+
+        p {
+          font-style: italic;
+        }
+      }
+
+      .collaborators {
+        p {
+          font-style: italic;
+        }
+      }
     }
 
-    .description{
-        width: 80%;
+    .description {
+      width: 70%;
     }
+  }
+
+  .project-images {
+    width: 100%;
+    @include d-flex(row, flex-start, flex-start, 14px);
+    flex-wrap: wrap;
+    img {
+      height: 100px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
 }

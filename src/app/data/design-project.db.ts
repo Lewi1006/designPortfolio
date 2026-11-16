@@ -32,6 +32,14 @@ their practice. The layout and format of the catalog is based on the proportions
 a handy size that is easy to flip through, but still makes it possible for the images and texts to be arranged in a structured
 and yet flexible and free manner. The typography also reflects the clear, classy (Helvetica) as well as the playful, flexible
 layout (Argesta serif).`,
+    images: [
+      '/img/spielraum01.jpg',
+      '/img/spielraum02.jpg',
+      '/img/spielraum03.jpg',
+      '/img/spielraum04.jpg',
+      '/img/spielraum05.jpg',
+      '/img/spielraum06.jpg',
+    ],
   },
   {
     id: 2,

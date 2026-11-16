@@ -1,28 +1,36 @@
 <section class="project-details">
   <div class="content">
     @if (project(); as currentProject) {
-      <div class="project-info">
-        <div class="project-facts">
-          <h1>{{ currentProject.title }}</h1>
+      <div class="project-wrapper">
+        <div class="project-info">
+          <div class="project-facts">
+            <h1>{{ currentProject.title }}</h1>
 
-          <div class="specifications">
-            @for (specification of currentProject.specifications; track specification.label) {
-              <div class="specification">
-                <h2>{{ specification.label }}</h2>
-                <p>{{ specification.value }}</p>
-              </div>
-            }
+            <div class="specifications">
+              @for (specification of currentProject.specifications; track specification.label) {
+                <div class="specification">
+                  <h2>{{ specification.label }}</h2>
+                  <p>{{ specification.value }}</p>
+                </div>
+              }
+            </div>
+
+            <div class="collaborators">
+              @for (collaborator of currentProject.collaborators; track collaborator) {
+                <p>{{ collaborator }}</p>
+              }
+            </div>
           </div>
 
-          <div class="collaborators">
-            @for (collaborator of currentProject.collaborators; track collaborator) {
-              <p>{{ collaborator }}</p>
-            }
+          <div class="description">
+            <p>{{ currentProject.description }}</p>
           </div>
         </div>
 
-        <div class="description">
-          <p>{{ currentProject.description }}</p>
+        <div class="project-images">
+          @for (image of currentProject.images; track image) {
+            <img [src]="image" [alt]="currentProject.title" />
+          }
         </div>
       </div>
     }

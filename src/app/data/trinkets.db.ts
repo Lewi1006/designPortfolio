@@ -29,4 +29,18 @@ export const TRINKETSDB: Trinket[] = [
     y: 0,
     zIndex: 4,
   },
+    {
+    id: 5,
+    image: '/img/dino.png',
+    x: 0,
+    y: 0,
+    zIndex: 5,
+  },
+     {
+    id: 6,
+    image: '/img/angel.PNG',
+    x: 0,
+    y: 0,
+    zIndex: 6,
+  },
 ];

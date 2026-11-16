@@ -11,4 +11,5 @@ export interface Project {
     value: string;
   }[];
   description?: string;
+  images?: string[];
 }

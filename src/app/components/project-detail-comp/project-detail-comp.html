@@ -29,10 +29,20 @@
 
         <div class="project-images">
           @for (image of currentProject.images; track image) {
-            <img [src]="image" [alt]="currentProject.title" />
+            <img
+              [src]="image"
+              [alt]="currentProject.title"
+              (click)="openGallery($index, galleryDialog)"
+            />
           }
         </div>
       </div>
+
+      <dialog #galleryDialog class="gallery-dialog">
+        @if (selectedImageIndex() !== null) {
+          <img [src]="getSelectedImage(currentProject.images)" [alt]="currentProject.title" />
+        }
+      </dialog>
     }
   </div>
 </section>

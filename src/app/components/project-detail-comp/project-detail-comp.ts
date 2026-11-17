@@ -1,4 +1,4 @@
-import { Component, inject, signal, OnInit} from '@angular/core';
+import { Component, inject, signal, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FrontendListService } from '../../shared/services/frontend-list.service';
 import { DesignListService } from '../../shared/services/design-list.service';
@@ -19,10 +19,11 @@ export class ProjectDetailComp implements OnInit {
   frontendListService = inject(FrontendListService);
 
   project = signal<Project | undefined>(undefined);
+  selectedImageIndex = signal<number | null>(null);
 
   // Gives us access to information about the currently active route (URL).
   route = inject(ActivatedRoute);
-  
+
   // Reads the value of the 'slug' parameter from the URL.
   // Example: /design/spielraum → slug = 'spielraum'
   slug = this.route.snapshot.paramMap.get('slug');
@@ -47,5 +48,19 @@ export class ProjectDetailComp implements OnInit {
         .find((project) => project.slug === this.slug);
       this.project.set(foundProject);
     }
+  }
+
+  openGallery(index: number, dialog: HTMLDialogElement) {
+    this.selectedImageIndex.set(index);
+    dialog.showModal();
+  }
+
+  getSelectedImage(images: string[] | undefined): string {
+    const index = this.selectedImageIndex();
+    if (index === null || images === undefined) {
+      return '';
+    }
+
+    return images[index];
   }
 }

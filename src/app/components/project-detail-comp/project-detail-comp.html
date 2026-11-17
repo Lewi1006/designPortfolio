@@ -38,9 +38,46 @@
         </div>
       </div>
 
-      <dialog #galleryDialog class="gallery-dialog">
+      <dialog #galleryDialog class="gallery-dialog" (mousemove)="onDialogMouseMove($event)">
+        <button class="close-button" (click)="closeGallery(galleryDialog)">close</button>
+        <!-- <button (click)="showPrevious(currentProject.images)">TEST PREVIOUS</button>
+        <button (click)="showNext(currentProject.images)">TEST NEXT</button> -->
+
         @if (selectedImageIndex() !== null) {
           <img [src]="getSelectedImage(currentProject.images)" [alt]="currentProject.title" />
+        }
+
+        @if (navigationDirection(); as direction) {
+          <span
+            class="navigation-hint"
+            [style.left.px]="cursorPosition().x"
+            [style.top.px]="cursorPosition().y"
+          >
+            {{ direction === 'previous' ? 'previous' : 'next' }}
+          </span>
+
+          <button
+            class="navigation-button"
+            [class.previous]="direction === 'previous'"
+            [class.next]="direction === 'next'"
+            (click)="
+              direction === 'previous'
+                ? showPrevious(currentProject.images)
+                : showNext(currentProject.images)
+            "
+          ></button>
+          <!-- <button
+            class="navigation-hint"
+            [style.left.px]="cursorPosition().x"
+            [style.top.px]="cursorPosition().y"
+            (click)="
+              direction === 'previous'
+                ? showPrevious(currentProject.images)
+                : showNext(currentProject.images)
+            "
+          >
+            {{ direction === 'previous' ? 'previous' : 'next' }}
+          </button> -->
         }
       </dialog>
     }

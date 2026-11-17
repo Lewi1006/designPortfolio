@@ -51,6 +51,10 @@ layout (Argesta serif).`,
     specifications: [{ label: '2 flyers', value: '105 x 148.5 mm' }],
     description: `This flyer was created during an internship at Barcelona based risography studio Jumbo Press. It was designed for
 the participation at Tokyo Art Book Fair 2023. Combining the differnt aesthetics of hand drawings and digital art it creates a playful and eclectic blend.`,
+  images: [
+      '/img/tokyo-art-book-fair.jpg',
+      '/img/tokyo-art-book-fair02.jpg',
+    ],
   },
   {
     id: 3,
@@ -69,6 +73,15 @@ created a “filled-in” version and an unfilled version, so to speak, which le
 The second set of posters, an experimental collage, using photos I took of toys as well as of playground structures
 focuses not only on rodeos as a playground but rather turns the process into a playground itself. In abstracting the
 images, modelling the fonts and layering I gave myself the freedom to be completely random, intuitive and playful.`,
+  images: [
+      '/img/playground01.png',
+      '/img/playground02.jpg',
+      '/img/playground03.jpg',
+      '/img/playground04.jpg',
+      '/img/playground05.png',
+      '/img/playground06.jpg',
+      '/img/playground07.jpg',
+    ],
   },
   {
     id: 4,
@@ -95,13 +108,18 @@ Since the project targets a broad audience—including children and schools thro
 is intentionally playful and inviting. It uses a bold, colorful visual language that reflects the project’s core themes: the
 contrast between night and darkness versus the artificial glow of streetlamps. Elements like star motifs and sticker-style
 illustrations of the hat sculptures add a vibrant and approachable touch.`,
+ images: [
+     '/img/nightcaps01.png',
+     '/img/nightcaps02.jpg',
+     '/img/nightcaps-poster.png',
+    ],
   },
   {
     id: 5,
     title: 'Nadir/Zenith',
     medium: 'book design',
     slug: 'nadir-zenit',
-    preview: '/img/nadir-zenit01.png',
+    preview:  '/img/zenith-cover01.png',
     collaborators: ['Estelle Träger', 'Leonie Wind'],
     specifications: [
       {
@@ -121,5 +139,29 @@ Zenith offers an experimental approach. Zenith is layed out to be read in a non-
 text book, which was generated using Indesigns GREP tool. Pictures and text are linked through labels, adapting the link
 structure of Wikipedia while also supporting the element of deconstruction and the possibility to open up the book on
 any page and start reading from there.`,
+
+ images: [
+  '/img/zenith-cover01.png',
+   '/img/zenith-cover02.png',
+    '/img/text1.png',
+    '/img/text2.png',
+    '/img/text3.png',
+    '/img/text4.png',
+    '/img/text5.png',
+    '/img/textqr1.png',
+    '/img/textqr2.png',
+    '/img/textqr3.png',
+    '/img/textqr4.png',
+    '/img/nadir-cover01.png',
+    '/img/nadir-cover02.png',
+     '/img/nadir01.png',
+     '/img/nadir02.png',
+     '/img/nadir03.png',
+     '/img/nadir04.png',
+     '/img/nadir05.png',
+     '/img/nadir06.png',
+     '/img/nadir07.png',
+     '/img/nadir08.png',
+    ],
   },
 ];

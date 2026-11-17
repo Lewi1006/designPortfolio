@@ -43,4 +43,11 @@ export const TRINKETSDB: Trinket[] = [
     y: 0,
     zIndex: 6,
   },
+     {
+    id: 7,
+    image: '/img/two horses.PNG',
+    x: 0,
+    y: 0,
+    zIndex: 7,
+  },
 ];

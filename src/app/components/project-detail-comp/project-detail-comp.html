@@ -40,9 +40,13 @@
 
           @if (currentProject.videos) {
             <div class="project-video">
-              <video (click)="openVideo(videoDialog)" preload="metadata">
-                <source [src]="currentProject.videos" type="video/mp4" />
-              </video>
+              <div class="video-thumbnail" (click)="openVideo(videoDialog)">
+                <video preload="metadata">
+                  <source [src]="currentProject.videos" type="video/mp4" />
+                </video>
+
+                <span class="play-label">play</span>
+              </div>
             </div>
           }
         </div>

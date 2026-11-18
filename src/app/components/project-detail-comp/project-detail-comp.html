@@ -27,26 +27,27 @@
           </div>
         </div>
 
-        <div class="project-images">
-          @for (image of currentProject.images; track image) {
-            <img
-              [src]="image"
-              [alt]="currentProject.title"
-              (click)="openGallery($index, galleryDialog)"
-            />
+        <div class="media">
+          <div class="project-images">
+            @for (image of currentProject.images; track image) {
+              <img
+                [src]="image"
+                [alt]="currentProject.title"
+                (click)="openGallery($index, galleryDialog)"
+              />
+            }
+          </div>
+
+          @if (currentProject.videos) {
+            <div class="project-video">
+              <video (click)="openVideo(videoDialog)" preload="metadata">
+                <source [src]="currentProject.videos" type="video/mp4" />
+              </video>
+            </div>
           }
         </div>
-
-        @if (currentProject.videos) {
-          <div class="project-video">
-            <video (click)="openVideo(videoDialog)" preload="metadata">
-              <source [src]="currentProject.videos" type="video/mp4" />
-            </video>
-          </div>
-        }
-
       </div>
-      
+
       <dialog #videoDialog class="gallery-dialog" (close)="stopVideo(videoDialog)">
         <button class="close-button" (click)="videoDialog.close()">close</button>
 
@@ -56,7 +57,7 @@
           </video>
         }
       </dialog>
-      
+
       <dialog #galleryDialog class="gallery-dialog" (mousemove)="onDialogMouseMove($event)">
         <button class="close-button" (click)="closeGallery(galleryDialog)">close</button>
 

@@ -9,6 +9,7 @@
 .project-wrapper {
   @include d-flex(column, flex-start, flex-start, 100px);
   width: 100%;
+  height: 100%;
 
   .project-info {
     @include d-flex(row, flex-start, flex-start, 20px);
@@ -51,26 +52,32 @@
     }
   }
 
-  .project-images {
+  .media {
     width: 100%;
-    @include d-flex(row, flex-start, flex-start, 14px);
-    flex-wrap: wrap;
+    height:fit-content;
+    @include d-flex(column, flex-start, flex-start, 18px);
 
-    img {
-      height: 100px;
-      width: auto;
-      object-fit: contain;
+    .project-images {
+      width: 100%;
+      @include d-flex(row, flex-start, flex-start, 14px);
+      flex-wrap: wrap;
+
+      img {
+        height: 100px;
+        width: auto;
+        object-fit: contain;
+      }
     }
-  }
 
-  .project-video {
-    width: 100%;
+    .project-video {
+      width: 100%;
 
-  video {
-    height: 100px;
-    width: auto;
-    object-fit: contain;
-  }
+      video {
+        height: 100px;
+        width: auto;
+        object-fit: contain;
+      }
+    }
   }
 }
 
@@ -119,7 +126,7 @@
     object-fit: contain;
   }
 
-    video {
+  video {
     position: absolute;
     top: 50%;
     left: 50%;

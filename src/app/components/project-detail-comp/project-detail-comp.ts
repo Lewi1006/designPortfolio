@@ -117,4 +117,16 @@ showNext(images: string[] | undefined) {
     this.selectedImageIndex.set(0);
   }
 }
+
+openVideo(dialog: HTMLDialogElement) {
+  dialog.showModal();
+}
+
+stopVideo(dialog: HTMLDialogElement) {
+  const video = dialog.querySelector('video');
+  video?.pause();
+  if (video) {
+    video.currentTime = 0;
+  }
+}
 }

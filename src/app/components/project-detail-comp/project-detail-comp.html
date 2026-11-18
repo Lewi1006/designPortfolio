@@ -36,12 +36,29 @@
             />
           }
         </div>
-      </div>
 
+        @if (currentProject.videos) {
+          <div class="project-video">
+            <video (click)="openVideo(videoDialog)" preload="metadata">
+              <source [src]="currentProject.videos" type="video/mp4" />
+            </video>
+          </div>
+        }
+
+      </div>
+      
+      <dialog #videoDialog class="gallery-dialog" (close)="stopVideo(videoDialog)">
+        <button class="close-button" (click)="videoDialog.close()">close</button>
+
+        @if (currentProject.videos) {
+          <video controls autoplay>
+            <source [src]="currentProject.videos" type="video/mp4" />
+          </video>
+        }
+      </dialog>
+      
       <dialog #galleryDialog class="gallery-dialog" (mousemove)="onDialogMouseMove($event)">
         <button class="close-button" (click)="closeGallery(galleryDialog)">close</button>
-        <!-- <button (click)="showPrevious(currentProject.images)">TEST PREVIOUS</button>
-        <button (click)="showNext(currentProject.images)">TEST NEXT</button> -->
 
         @if (selectedImageIndex() !== null) {
           <img [src]="getSelectedImage(currentProject.images)" [alt]="currentProject.title" />
@@ -66,18 +83,6 @@
                 : showNext(currentProject.images)
             "
           ></button>
-          <!-- <button
-            class="navigation-hint"
-            [style.left.px]="cursorPosition().x"
-            [style.top.px]="cursorPosition().y"
-            (click)="
-              direction === 'previous'
-                ? showPrevious(currentProject.images)
-                : showNext(currentProject.images)
-            "
-          >
-            {{ direction === 'previous' ? 'previous' : 'next' }}
-          </button> -->
         }
       </dialog>
     }

@@ -12,4 +12,5 @@ export interface Project {
   }[];
   description?: string;
   images?: string[];
+  videos?:string[];
 }

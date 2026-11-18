@@ -40,6 +40,9 @@ layout (Argesta serif).`,
       '/img/spielraum05.jpg',
       '/img/spielraum06.jpg',
     ],
+    videos:[
+      '/videos/Wind Leonie_The Long Minute.mp4'
+    ]
   },
   {
     id: 2,

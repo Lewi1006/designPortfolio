@@ -10,6 +10,7 @@
   @include d-flex(column, flex-start, flex-start, 100px);
   width: 100%;
   height: 100%;
+  overflow: hidden;
 
   .project-info {
     @include d-flex(row, flex-start, flex-start, 20px);
@@ -48,13 +49,26 @@
     }
 
     .description {
+       @include scrollbar();
+
       width: 70%;
+      height: 280px;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 
   .media {
+ @include scrollbar();
+
     width: 100%;
-    height: fit-content;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+
+    // height: fit-content;
     @include d-flex(column, flex-start, flex-start, 18px);
 
     .project-images {
